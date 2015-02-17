@@ -127,7 +127,7 @@ var createWorldCreator = function() {
         _.each(world.floors, function(floor) {
             floor.on("up_button_pressed down_button_pressed", function(eventName) {
                 // Need randomize iteration order or we'll tend to fill upp first elevator
-                _.each(_.sample(_.range(world.elevators.length), world.elevators.length), function(elevIndex) {
+                _.each(_.shuffle(_.range(world.elevators.length), world.elevators.length), function(elevIndex) {
                     var elevator = world.elevators[elevIndex];
                     if(
                         eventName === "up_button_pressed" && elevator.goingUpIndicator ||
