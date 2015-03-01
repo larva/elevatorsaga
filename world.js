@@ -40,6 +40,7 @@ var createWorldCreator = function() {
         } else {
             user.displayType = "male";
         }
+        user.antisocial = (_.random(100) == 0);
         return user;
     };
 
